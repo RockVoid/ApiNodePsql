@@ -1,10 +1,25 @@
 CREATE DATABASE aspectest;
 
 CREATE TABLE issues(
-    id SERIAL PRIMARY KEY,
+    issue_id SERIAL PRIMARY KEY,
     description VARCHAR(255),
     created_at DATE NOT NULL DEFAULT CURRENT_DATE,
     todo boolean,
     doing boolean,
     done boolean
 );
+
+CREATE TABLE users(
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+CREATE TABLE issue_has_user(
+    user_id INT NOT NULL,
+    issue_id INT NOT NULL
+);
+
+SELECT issues.id, users.name
+FROM issues
+INNER JOIN users
+ON issues.id=users.id; 
