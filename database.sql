@@ -18,8 +18,3 @@ CREATE TABLE issue_has_user(
     user_id INT NOT NULL,
     issue_id INT NOT NULL
 );
-
-SELECT issues.id, users.name
-FROM issues
-INNER JOIN users
-ON issues.id=users.id; 

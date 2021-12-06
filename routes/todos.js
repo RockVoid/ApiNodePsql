@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 import { 
     getTodos,
     getTodosById,
@@ -11,9 +10,9 @@ import {
 const router = Router();
 
 router.get("/", getTodos);
-router.get("/:id", getTodosById);
-router.post("/", postTodo);
-router.patch("/:id", updateTodo);
-router.delete("/:id", deleteTodo);
+router.get("/:issue_id", getTodosById);
+router.post("/:user_id", postTodo);
+router.put("/:issue_id", updateTodo);
+router.delete("/:issue_id", deleteTodo);
 
 export default router;
